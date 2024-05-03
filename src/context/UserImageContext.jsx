@@ -9,6 +9,8 @@ const UserImageProvider = ({ children }) => {
   const [manualSearch, setManualSearch] = useState(false);
   const [imageDisplay, setImageDisplay] = useState(false);
   const [imageSearching, setImageSearching] = useState(false);
+  const [imageSearched, setImageSearched] = useState(false);
+
   return (
     <UserImageContext.Provider
       value={{
@@ -18,12 +20,14 @@ const UserImageProvider = ({ children }) => {
         manualSearch,
         imageDisplay,
         imageSearching,
+        imageSearched,
         setUserDetail,
         setImageTopic,
         setImagesData,
         setManualSearch,
         setImageDisplay,
         setImageSearching,
+        setImageSearched,
       }}
     >
       {children}

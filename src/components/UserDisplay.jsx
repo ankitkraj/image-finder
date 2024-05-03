@@ -9,12 +9,14 @@ function UserDisplay() {
     setImageTopic,
     setManualSearch,
     userDetail,
+    setImageSearched,
   } = useContext(UserImageContext);
 
   const imageOverlayHandle = () => {
     setImageDisplay(false);
     setImageTopic("");
     setManualSearch(false);
+    setImageSearched(false);
   };
   return (
     <div className="image-display">

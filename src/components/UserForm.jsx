@@ -16,6 +16,7 @@ function UserForm() {
     manualSearch,
     imagesData,
     userDetail,
+    setImageSearched,
   } = useContext(UserImageContext);
 
   const unsplashAccessKey = config.unsplashApiKey;
@@ -30,7 +31,11 @@ function UserForm() {
       .then((response) => response.json())
       .then((data) => {
         setImagesData(data.results[0].urls.thumb);
+        setImageSearched(true);
       });
+    // .then(() => {
+    //   setImageSearched(true);
+    // });
   };
 
   const firstNameHandler = (e) => {
@@ -60,13 +65,13 @@ function UserForm() {
 
     if (!userDetail.firstName || !userDetail.surName) {
       alert("Please Enter Name and Surname ");
+      setImageSearched(false);
       return;
     }
 
     setImageSearching(true);
-    if (imageSearching && imageTopic) {
-      fetchImage();
-    }
+
+    fetchImage();
   };
 
   // console.log("userDetail", userDetail);

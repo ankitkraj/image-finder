@@ -7,17 +7,17 @@ import { UserImageContext } from "./context/UserImageContext";
 
 function App() {
   const {
-    imageTopic,
     imageDisplay,
     userDetail,
     imagesData,
     imageOverlayHandle,
+    imageSearched,
   } = useContext(UserImageContext);
   return (
     <div className="main">
       <h1>Image finder</h1>
       <UserForm />
-      {imageTopic && <ImageDisplay />}
+      {imageSearched && <ImageDisplay />}
       {imageDisplay && (
         <UserDisplay
           userDetail={userDetail}

@@ -3,7 +3,7 @@ import { UserImageContext } from "../context/UserImageContext";
 import { useContext } from "react";
 
 function ImageDisplay() {
-  const { imagesData, setImageDisplay, setImageTopic } =
+  const { imagesData, setImageDisplay, setImageTopic, setImageSearched } =
     useContext(UserImageContext);
 
   const acceptHandle = () => {
@@ -13,6 +13,7 @@ function ImageDisplay() {
   const rejectHandle = () => {
     setImageDisplay(false);
     setImageTopic("");
+    setImageSearched(false);
   };
 
   return (
